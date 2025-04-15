@@ -26,11 +26,36 @@ public class BasicCalculator {
         scanner.nextLine(); // Consume the newline after the number
         String option = scanner.nextLine();
         
-        // For this exercise, we always multiply regardless of the selected option
-        float result = firstNumber * secondNumber;
+        // Perform the calculation based on the user's selection
+        float result = 0;
+        char operation = ' ';
+        
+        if (option.equalsIgnoreCase("A") || option.equalsIgnoreCase("add")) {
+            result = firstNumber + secondNumber;
+            operation = '+';
+        } else if (option.equalsIgnoreCase("S") || option.equalsIgnoreCase("subtract")) {
+            result = firstNumber - secondNumber;
+            operation = '-';
+        } else if (option.equalsIgnoreCase("M") || option.equalsIgnoreCase("multiply")) {
+            result = firstNumber * secondNumber;
+            operation = '*';
+        } else if (option.equalsIgnoreCase("D") || option.equalsIgnoreCase("divide")) {
+            if (secondNumber != 0) {
+                result = firstNumber / secondNumber;
+                operation = '/';
+            } else {
+                System.out.println("Error: Cannot divide by zero");
+                scanner.close();
+                return;
+            }
+        } else {
+            System.out.println("Invalid option selected");
+            scanner.close();
+            return;
+        }
         
         // Display the result
-        System.out.println(firstNumber + " * " + secondNumber + " = " + result);
+        System.out.println(firstNumber + " " + operation + " " + secondNumber + " = " + result);
         
         scanner.close();
     }
