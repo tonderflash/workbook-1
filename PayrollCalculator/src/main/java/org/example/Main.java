@@ -32,12 +32,12 @@ public class Main {
             grossPay = (regularHours * payRate) + (overtimeHours * payRate * 1.5f);
         }
         
-        // Display the employee name and gross pay
+        
         System.out.println("\nPayment Summary");
         System.out.println("Employee name: " + name);
         System.out.println("Gross pay: $" + String.format("%.2f", grossPay));
         
-        // Close the scanner
+       
         scanner.close();
     }
 }
