@@ -11,8 +11,6 @@ public class Main {
         
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("===== Car Rental Calculator =====");
-
         // Collect basic information
         System.out.print("Pickup month (1-12): ");
         String month = scanner.nextLine();
